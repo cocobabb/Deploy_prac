@@ -29,7 +29,7 @@ services:
       # Dockerfile 경로
       context: ./api
       dockerfile: Dockerfile
-    image: cocobab/api-image:latest
+    image: ${DOCKERHUB_USERNAME}/api-image:latest
     networks:
       - db-network
       - api-network
@@ -45,7 +45,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: cocobab/client-image:latest
+    image: ${DOCKERHUB_USERNAME}/client-image:latest
     ports:
       - "80:80"
       - "443:443"
