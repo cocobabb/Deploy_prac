@@ -15,7 +15,8 @@ server {
  
     # SSL 보안 설정
     ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_prefer_server_ciphers on;
+    ssl_prefer_server_ciphers on; # 암호화 알고리즘 선택 우선권을 서버에게 부여
+    # SSL 과정 중 사용할 알고리즘 목록
     ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
 
     root /usr/share/nginx/html;

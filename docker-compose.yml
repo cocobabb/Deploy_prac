@@ -44,7 +44,7 @@ services:
     networks:
       - db-network
       - api-network
-    env_file: 
+    env_file:
       - .env
     depends_on:
       db:
@@ -76,8 +76,8 @@ services:
     env_file:
       - .env
     volumes:
-      - /etc/letsencrypt/live/3.36.122.147.sslip.io/fullchain.pem:/etc/letsencrypt/live/3.36.122.147.sslip.io/fullchain.pem
-      - /etc/letsencrypt/live/3.36.122.147.sslip.io/privkey.pem:/etc/letsencrypt/live/3.36.122.147.sslip.io/privkey.pem
+      - /etc/letsencrypt/live/${DOMAIN}/fullchain.pem:/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
+      - /etc/letsencrypt/live/${DOMAIN}/privkey.pem:/etc/letsencrypt/live/${DOMAIN}/privkey.pem
     depends_on:
       - db
       - api

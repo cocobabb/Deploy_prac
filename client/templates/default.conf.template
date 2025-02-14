@@ -4,6 +4,7 @@ server {
     server_name ${DOMAIN};
 
     location / {
+        # 301 상태 코드: 브라우저가 리다이렉트 메세지를 받아서 해줌
         return 301 https://$host$request_uri;
     }
 } 
