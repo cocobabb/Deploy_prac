@@ -23,12 +23,15 @@ FROM nginx
 # nginx 설정파일 복사
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# templates 폴더 파일 복사(COPY) 
+COPY ./templates /etc/nginx/templates
+
 # Build Stage에서 빌드 결과물(정적 파일) 복사
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # 포트 명시
 # 문서화 목적
-EXPOSE 80
+EXPOSE 80 443
 
 # nginx 실행
 CMD ["nginx", "-g", "daemon off;"]

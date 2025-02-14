@@ -43,6 +43,8 @@ jobs:
           echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> .env
           echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" >> .env
           echo "DOCKERHUB_USERNAME=${{secrets.DOCKERHUB_USERNAME}}" >> .env
+          echo "DOMAIN=${{secrets.DOMAIN}}" >> .env
+          echo "API_URL=${{ secrets.API_URL }}" >> .env
 
       - name: Add Remote Server Fingerprint to Known Hosts
         run: ssh-keyscan -H -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts || true
