@@ -44,7 +44,7 @@ services:
     networks:
       - db-network
       - api-network
-    env_file:
+    env_file: 
       - .env
     depends_on:
       db:
